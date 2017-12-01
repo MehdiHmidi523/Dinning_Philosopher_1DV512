@@ -21,7 +21,7 @@ public class Philosopher implements Runnable {
 		this.id = id;
 		this.leftChopStick = leftChopStick;
 		this.rightChopStick = rightChopStick;
-		
+
 		/*
 		 * set the seed for this philosopher. To differentiate the seed from the other philosophers, we add the philosopher id to the seed.
 		 * the seed makes sure that the random numbers are the same every time the application is executed
@@ -85,13 +85,44 @@ public class Philosopher implements Runnable {
 
 	@Override
 	public void run() {
+		while(!Thread.currentThread().isInterrupted() && !higherStateOfBeing()){ // if session not interrupted and philosopher did not starve to Nirvana
+
+            Random pseudo = new Random();
+            think(pseudo.nextInt(1001));
+
+            //first to finish thinking and feel hungry reaches for the Chopsticks and checks
+            if(!possibleToEat()) {
+                try {
+                    Thread.currentThread().wait();  //checks also death.
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                eat(pseudo.nextInt(1001));
+            }
+
+        }
+
 		/* TODO
-		 * Think,
-		 * Hungry,
-		 * Eat,
-		 * Repeat until thread is interrupted
 		 * Add comprehensive comments to explain your implementation, including deadlock prevention/detection
 		 */
 	}
+
+    private void eat(int i) { //TODO: impl
+
+    }
+
+    private boolean possibleToEat() {
+	    return (leftChopStick.TAKEN == true) && (rightChopStick.TAKEN == true);
+    }
+
+    private void think(int i) { //TODO: impl
+
+    }
+
+    private boolean higherStateOfBeing() {
+	    return hungryTime>=3000;
+    }
+
 
 }

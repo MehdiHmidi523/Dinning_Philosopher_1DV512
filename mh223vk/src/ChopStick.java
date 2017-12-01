@@ -1,7 +1,8 @@
 
 public class ChopStick {
 	private final int id;
-	
+	public boolean TAKEN=false;
+
 	public ChopStick(int id) {
 		this.id = id;
 	}

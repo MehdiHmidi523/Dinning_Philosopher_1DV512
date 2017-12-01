@@ -52,6 +52,7 @@ public class DiningPhilosopher {
 		} finally {
 			executorService.shutdown();
 			executorService.awaitTermination(10, TimeUnit.MILLISECONDS);
+			System.out.println("Finished.");
 		}
 	}
 
@@ -64,8 +65,6 @@ public class DiningPhilosopher {
 		
 		//create the executor service
 		executorService = Executors.newFixedThreadPool(NUMBER_OF_PHILOSOPHERS);
-
-		/** Preliminary Approach *****/
 
 		//Add the needed number of Chopsticks to the Table which corresponds to the number of sitting philosophers.
 		for(int i = 1; i<NUMBER_OF_PHILOSOPHERS;i++) chopSticks.add(new ChopStick(i));
