@@ -49,9 +49,6 @@ public class DiningPhilosopher {
 			 *  Add comprehensive comments to explain your implementation.
 			 */
 
-
-			
-
 		} finally {
 			executorService.shutdown();
 			executorService.awaitTermination(10, TimeUnit.MILLISECONDS);
@@ -62,33 +59,26 @@ public class DiningPhilosopher {
 		SIMULATION_TIME = simulationTime;
 		SEED = randomSeed;
 		
-		philosophers = new ArrayList<Philosopher>(NUMBER_OF_PHILOSOPHERS);
-		chopSticks = new ArrayList<ChopStick>(NUMBER_OF_PHILOSOPHERS);
+		philosophers = new ArrayList<>(NUMBER_OF_PHILOSOPHERS);
+		chopSticks = new ArrayList<>(NUMBER_OF_PHILOSOPHERS);
 		
 		//create the executor service
 		executorService = Executors.newFixedThreadPool(NUMBER_OF_PHILOSOPHERS);
-		
-		/* TODO
-		 * Add chopsticks,
-		 * Add philosophers, and
-		 * Assign the corresponding chopsticks.
-		 * Add comprehensive comments to explain your implementation.
-		 */
-		
+
+		/** Preliminary Approach *****/
+
+		//Add the needed number of Chopsticks to the Table which corresponds to the number of sitting philosophers.
+		for(int i = 1; i<NUMBER_OF_PHILOSOPHERS;i++) chopSticks.add(new ChopStick(i));
+
+		//Add the number of philosophers corresponding to this session and assign left and right chopstick to them.
+		for(int i =1; i<=NUMBER_OF_PHILOSOPHERS;i++) philosophers.add(new Philosopher(i,chopSticks.get(i+1),chopSticks.get(i),SEED));
+
+
 	}
-	
 
 
 
-
-
-
-
-
-
-	public ArrayList<Philosopher> getPhilosophers() {
-		return philosophers;
-	}
+	public ArrayList<Philosopher> getPhilosophers() { return philosophers; }
 	
 	/*
 	 * The following code prints a table where each row corresponds to one of the Philosophers, 

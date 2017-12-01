@@ -59,10 +59,6 @@ public class Philosopher implements Runnable {
 	}
 
 
-
-
-
-
 	public double getAverageThinkingTime() {
 		/* TODO
 		 * Return the average thinking time

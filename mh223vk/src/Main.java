@@ -8,6 +8,7 @@ public class Main {
     	dp.DEBUG = true;
         int simulationTime = 10000;
         int seed = 100;
+
         if(args.length > 0) // check if parameters are passed as argument
         	simulationTime = Integer.parseInt(args[0]); // the first parameter is the simulation time
         
