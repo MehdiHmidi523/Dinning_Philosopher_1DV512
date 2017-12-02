@@ -21,3 +21,6 @@ Time for THINKING and EATING is generated pseudo-randomly from a discrete unifor
 Basically, a philosopher is in THINKING or EATING state for 0-1000 time units (milliseconds).
 
 One of these values is selectedin pseudo-random2 manner to simulate thinkingor eating time.
+
+
+The problem is how to design a discipline of behavior (a concurrent algorithm) such that no philosopher will starve; i.e., each can forever continue to alternate between eating and thinking, assuming that no philosopher can know when others may want to eat or think.
