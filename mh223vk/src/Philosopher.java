@@ -1,15 +1,22 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class Philosopher implements Runnable {
 	
 	private int id;
+    public static final File logFile = new File("src/Log.txt");
+    public static FileWriter log;
+    public static long startTime;
 	
 	private final ChopStick leftChopStick;
 	private final ChopStick rightChopStick;
 	
 	private Random randomGenerator = new Random();
-	
-	private int numberOfEatingTurns = 0;
+    private long seed = 1000;
+
+    private int numberOfEatingTurns = 0;
 	private int numberOfThinkingTurns = 0;
 	private int numberOfHungryTurns = 0;
 
@@ -29,6 +36,7 @@ public class Philosopher implements Runnable {
 		 */
 		
 		randomGenerator.setSeed(id+seed);
+        new Thread(this).start();
 	}
 	public int getId() {
 		return id;
@@ -85,8 +93,8 @@ public class Philosopher implements Runnable {
 
 	@Override
 	public void run() {
-		while(!Thread.currentThread().isInterrupted() && !higherStateOfBeing()){ // if session not interrupted and philosopher did not starve to Nirvana
 
+		while(!Thread.currentThread().isInterrupted() && !higherStateOfBeing()){ // if session not interrupted and philosopher did not starve to Nirvana
             Random pseudo = new Random();
             think(pseudo.nextInt(1001));
 
@@ -98,7 +106,7 @@ public class Philosopher implements Runnable {
                     e.printStackTrace();
                 }
             }else{
-                eat(pseudo.nextInt(1001));
+                eat(pseudo.nextInt(1001)); // philosopher takes the chopsticks (lock them ?)
             }
 
         }
@@ -108,20 +116,40 @@ public class Philosopher implements Runnable {
 		 */
 	}
 
-    private void eat(int i) { //TODO: impl
+    public void setSeed(long seed) { this.seed = seed; }
 
+    private void eat(int eating) {
+        this.eatingTime += eating;
+        writeToLog("EATING",eating);
+        sleep(eating);
     }
 
     private boolean possibleToEat() {
-	    return (leftChopStick.TAKEN == true) && (rightChopStick.TAKEN == true);
+	    return (leftChopStick.TAKEN) && (rightChopStick.TAKEN);
     }
 
-    private void think(int i) { //TODO: impl
+    private void think(int thinking) {
+        this.thinkingTime+=thinking;
+        writeToLog("THINKING",thinking);
+        sleep(thinking);
 
     }
 
-    private boolean higherStateOfBeing() {
+    private void writeToLog(String action, int time) {
+        try {
+            synchronized (logFile){ log.write((System.currentTimeMillis()-startTime) + "ms : Philosopher_"+getId()+" is "+action+" for " + time + "\n"); }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+
+    private boolean higherStateOfBeing() { // philosopher dies after three consecutive rounds of waiting
 	    return hungryTime>=3000;
+    }
+
+    private void sleep(int duration) {
+        try { Thread.sleep( duration ); }
+        catch ( InterruptedException e ) { Thread.currentThread().interrupt(); }
     }
 
 

@@ -45,7 +45,11 @@ public class DiningPhilosopher {
 			Thread.sleep(SIMULATION_TIME);
 			
 			/*	TODO
-			 *  Stop all philosophers.
+			 *  Stop all philosophers.*/
+			for(int i = 0; i < philosophers.size(); i++){
+				//interrupt philosophers.get(i).interrupt  ??
+			}
+			/*
 			 *  Add comprehensive comments to explain your implementation.
 			 */
 
