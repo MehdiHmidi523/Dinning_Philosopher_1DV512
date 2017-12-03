@@ -16,5 +16,6 @@ public class Main {
     	dp.start(); // start the simulation process
 
     	dp.printTable();
+
     }
 }

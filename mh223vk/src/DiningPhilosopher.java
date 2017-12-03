@@ -55,6 +55,7 @@ public class DiningPhilosopher {
                     // Someone woke us up during sleep, that's OK
                 }
 			}
+
 			executorService.shutdownNow(); // Interrupt all threads
 
 		} finally {
@@ -79,7 +80,7 @@ public class DiningPhilosopher {
 
 		//Add the number of philosophers corresponding to this session and assign left and right chopstick to them.
 		for(int i =1; i<=NUMBER_OF_PHILOSOPHERS;i++)
-            philosophers.add(new Philosopher(i,chopSticks.get(i% NUMBER_OF_PHILOSOPHERS),chopSticks.get(i-1),SEED));
+            philosophers.add(new Philosopher(i-1,chopSticks.get(i% NUMBER_OF_PHILOSOPHERS),chopSticks.get(i-1),SEED));
 
         // initialize logfile
         try {
@@ -90,7 +91,6 @@ public class DiningPhilosopher {
         } catch (IOException e) { e.printStackTrace(); }
         // initialize time for log file
         Philosopher.startTime = System.currentTimeMillis();
-
 	}
 
 	public ArrayList<Philosopher> getPhilosophers() { return philosophers; }

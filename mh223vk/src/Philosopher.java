@@ -14,7 +14,7 @@ public class Philosopher implements Runnable {
 	private final ChopStick leftChopStick;
 	private final ChopStick rightChopStick;
 	
-	private Random randomGenerator = new Random();
+	private Random randomGenerator;
 
 
     private int numberOfEatingTurns = 0;
@@ -29,39 +29,32 @@ public class Philosopher implements Runnable {
 		this.id = id;
 		this.leftChopStick = leftChopStick;
 		this.rightChopStick = rightChopStick;
-
+		randomGenerator = new Random(id+seed);
 		/*
 		 * set the seed for this philosopher. To differentiate the seed from the other philosophers, we add the philosopher id to the seed.
 		 * the seed makes sure that the random numbers are the same every time the application is executed
 		 * the random number is not the same between multiple calls within the same program execution 
 		 */
-		randomGenerator.setSeed(id+seed);
 	}
 
 	public int getId() {
 		return id;
 	}
-
 	public int getNumberOfThinkingTurns() {
 		return numberOfThinkingTurns;
 	}
-	
 	public int getNumberOfEatingTurns() {
 		return numberOfEatingTurns;
 	}
-	
 	public int getNumberOfHungryTurns() {
 		return numberOfHungryTurns;
 	}
-
 	public double getTotalThinkingTime() {
 		return thinkingTime;
 	}
-
 	public double getTotalEatingTime() {
 		return eatingTime;
 	}
-
 	public double getTotalHungryTime() {
 		return hungryTime;
 	}
@@ -82,10 +75,9 @@ public class Philosopher implements Runnable {
 
 	@Override
 	public void run() {
-		while (true) {
-
+		while (!Thread.currentThread().isInterrupted()) {
 			think(randomGenerator.nextInt(1000));
-			numberOfHungryTurns++;
+
 			long hungryStartTime = System.nanoTime();
 			long hungryEndTime;
 			Lock rightLock = rightChopStick.getLock();
@@ -100,35 +92,33 @@ public class Philosopher implements Runnable {
                 hungryEndTime = System.nanoTime();
                 hungryTime+= Math.round((hungryEndTime-hungryStartTime)/1000000);
 				writeToLog("HUNGRY",Math.round((hungryEndTime-hungryStartTime)/1000000));
+				numberOfHungryTurns++;
 
                 eat(randomGenerator.nextInt(1000));
+
                 leftLock.unlock();
                 writeToLog("PUTTING DOWN THE LEFT CHOPSTICK",0);
+
             } finally {
                 rightLock.unlock();
                 writeToLog("PUTTING DOWN THE RIGHT CHOPSTICK",0);
             }
-
 		}
-
-		/* TODO
-		 * Add comprehensive comments to explain your implementation, including deadlock prevention/detection
-		 */
 	}
 
     private void eat(int eating) {
         this.eatingTime += eating;
-		numberOfEatingTurns++;
         writeToLog("EATING",eating);
         sleep(eating);
+		numberOfEatingTurns++;
     }
 
 	private void think(int thinking) {
 		this.thinkingTime+=thinking;
-		numberOfThinkingTurns++;
 		writeToLog("THINKING",thinking);
-        sleep(thinking);
-    }
+		sleep(thinking);
+		numberOfThinkingTurns++;
+	}
 
     private void writeToLog(String action, int time) {
         try {
@@ -137,7 +127,6 @@ public class Philosopher implements Runnable {
             e.printStackTrace();
         }
 	}
-
     private void sleep(int duration) {
         try { Thread.sleep( duration ); }
         catch ( InterruptedException e ) { Thread.currentThread().interrupt(); }
