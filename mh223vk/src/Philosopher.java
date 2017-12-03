@@ -16,6 +16,7 @@ public class Philosopher implements Runnable {
 	
 	private Random randomGenerator = new Random();
     private long seed = 1000;
+    private boolean debug;
 
     private int numberOfEatingTurns = 0;
 	private int numberOfThinkingTurns = 0;
@@ -35,10 +36,10 @@ public class Philosopher implements Runnable {
 		 * the seed makes sure that the random numbers are the same every time the application is executed
 		 * the random number is not the same between multiple calls within the same program execution 
 		 */
-		
 		randomGenerator.setSeed(id+seed);
-        new Thread(this).start();
+
 	}
+
 	public int getId() {
 		return id;
 	}
@@ -67,7 +68,7 @@ public class Philosopher implements Runnable {
 		return hungryTime;
 	}
 
-
+	//TODO: impl
 	public double getAverageThinkingTime() {
 		/* TODO
 		 * Return the average thinking time
@@ -116,8 +117,6 @@ public class Philosopher implements Runnable {
 				writeToLog("PUTTING DOWN THE RIGHT CHOPSTICK",0);
 			}
 			think(randomGenerator.nextInt(10)+1);
-
-
         }
 
 		/* TODO
@@ -133,7 +132,6 @@ public class Philosopher implements Runnable {
         writeToLog("EATING",eating);
         sleep(eating);
     }
-
 
     private void think(int thinking) {
 		this.thinkingTime+=thinking;

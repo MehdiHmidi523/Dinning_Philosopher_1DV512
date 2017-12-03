@@ -77,13 +77,12 @@ public class DiningPhilosopher {
 		Random rand = new Random(System.currentTimeMillis());
 
 		//Add the needed number of Chopsticks to the Table which corresponds to the number of sitting philosophers.
-		for(int i = 0; i<NUMBER_OF_PHILOSOPHERS;i++) chopSticks.add(new ChopStick(i));
+		for(int i = 1; i<=NUMBER_OF_PHILOSOPHERS;i++) chopSticks.add(new ChopStick(i));
 
 		//Add the number of philosophers corresponding to this session and assign left and right chopstick to them.
-		for(int i =0; i<NUMBER_OF_PHILOSOPHERS;i++) {
-            philosophers.add(new Philosopher(i,chopSticks.get(i + 1 % NUMBER_OF_PHILOSOPHERS),chopSticks.get(i),SEED));
-            philosophers.get(i).setSeed(rand.nextLong());
-		}
+		for(int i =1; i<=NUMBER_OF_PHILOSOPHERS;i++)
+            philosophers.add(new Philosopher(i,chopSticks.get(i% NUMBER_OF_PHILOSOPHERS),chopSticks.get(i-1),SEED));
+
 
         // initialize logfile
         try {
@@ -95,8 +94,6 @@ public class DiningPhilosopher {
         Philosopher.startTime = System.currentTimeMillis();
 
 	}
-
-
 
 	public ArrayList<Philosopher> getPhilosophers() { return philosophers; }
 	
