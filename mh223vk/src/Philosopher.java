@@ -15,7 +15,7 @@ public class Philosopher implements Runnable {
 	private final ChopStick rightChopStick;
 	
 	private Random randomGenerator = new Random();
-    private long seed = 1000;
+
 
     private int numberOfEatingTurns = 0;
 	private int numberOfThinkingTurns = 0;
@@ -36,7 +36,6 @@ public class Philosopher implements Runnable {
 		 * the random number is not the same between multiple calls within the same program execution 
 		 */
 		randomGenerator.setSeed(id+seed);
-
 	}
 
 	public int getId() {
@@ -84,6 +83,10 @@ public class Philosopher implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
+
+			think(randomGenerator.nextInt(1000));
+			hungry(randomGenerator.nextInt(1000));
+
 			Lock rightLock = rightChopStick.getLock();
 			Lock leftLock = leftChopStick.getLock();
 
@@ -99,7 +102,7 @@ public class Philosopher implements Runnable {
                 rightLock.unlock();
                 writeToLog("PUTTING DOWN THE RIGHT CHOPSTICK",0);
             }
-			think(randomGenerator.nextInt(1000));
+
 		}
 
 		/* TODO
@@ -114,7 +117,14 @@ public class Philosopher implements Runnable {
         sleep(eating);
     }
 
-      private void think(int thinking) {
+	private void hungry(int hungrytime) {
+		this.hungryTime+=hungryTime;
+		numberOfHungryTurns++;
+		writeToLog("HUNGRY",hungrytime);
+		sleep(hungrytime);
+	}
+
+	private void think(int thinking) {
 		this.thinkingTime+=thinking;
 		numberOfThinkingTurns++;
 		writeToLog("THINKING",thinking);

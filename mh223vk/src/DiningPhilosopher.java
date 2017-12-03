@@ -54,9 +54,7 @@ public class DiningPhilosopher {
                 } catch (InterruptedException e) {
                     // Someone woke us up during sleep, that's OK
                 }
-
 			}executorService.shutdownNow(); // Interrupt all threads
-
 		} finally {
 			executorService.shutdown();
 			executorService.awaitTermination(10, TimeUnit.MILLISECONDS);
