@@ -85,8 +85,9 @@ public class Philosopher implements Runnable {
 		while (true) {
 
 			think(randomGenerator.nextInt(1000));
-			hungry(randomGenerator.nextInt(1000));
-
+			numberOfHungryTurns++;
+			long hungryStartTime = System.nanoTime();
+			long hungryEndTime;
 			Lock rightLock = rightChopStick.getLock();
 			Lock leftLock = leftChopStick.getLock();
 
@@ -95,6 +96,11 @@ public class Philosopher implements Runnable {
 			try {
                 leftLock.lock();
                 writeToLog("TAKING THE LEFT CHOPSTICK",0);
+
+                hungryEndTime = System.nanoTime();
+                hungryTime+= Math.round((hungryEndTime-hungryStartTime)/1000000);
+				writeToLog("HUNGRY",Math.round((hungryEndTime-hungryStartTime)/1000000));
+
                 eat(randomGenerator.nextInt(1000));
                 leftLock.unlock();
                 writeToLog("PUTTING DOWN THE LEFT CHOPSTICK",0);
@@ -116,13 +122,6 @@ public class Philosopher implements Runnable {
         writeToLog("EATING",eating);
         sleep(eating);
     }
-
-	private void hungry(int hungrytime) {
-		this.hungryTime+=hungryTime;
-		numberOfHungryTurns++;
-		writeToLog("HUNGRY",hungrytime);
-		sleep(hungrytime);
-	}
 
 	private void think(int thinking) {
 		this.thinkingTime+=thinking;
