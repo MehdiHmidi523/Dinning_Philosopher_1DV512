@@ -10,7 +10,7 @@ public class Philosopher implements Runnable {
     public static final File logFile = new File("Log.txt");
     public static FileWriter log;
     public static long startTime;
-	
+	private boolean debug;
 	private final ChopStick leftChopStick;
 	private final ChopStick rightChopStick;
 	
@@ -25,11 +25,12 @@ public class Philosopher implements Runnable {
 	private double eatingTime = 0;
 	private double hungryTime = 0;
 	
-	public Philosopher(int id, ChopStick leftChopStick, ChopStick rightChopStick, int seed) {
+	public Philosopher(int id, ChopStick leftChopStick, ChopStick rightChopStick, int seed,boolean DEBUG) {
 		this.id = id;
 		this.leftChopStick = leftChopStick;
 		this.rightChopStick = rightChopStick;
 		randomGenerator = new Random(id+seed);
+		this.debug=DEBUG;
 		/*
 		 * set the seed for this philosopher. To differentiate the seed from the other philosophers, we add the philosopher id to the seed.
 		 * the seed makes sure that the random numbers are the same every time the application is executed
@@ -84,45 +85,47 @@ public class Philosopher implements Runnable {
 			Lock leftLock = leftChopStick.getLock();
 
 			rightLock.lock();
-			writeToLog("TAKING THE RIGHT CHOPSTICK",0);
+			writeToLog("TAKING THE RIGHT CHOPSTICK",0,debug);
 			try {
-                leftLock.lock();
-                writeToLog("TAKING THE LEFT CHOPSTICK",0);
+                leftLock.lock();			// Try taking left chopstick if fails then we relinquish right one.
+                writeToLog("TAKING THE LEFT CHOPSTICK",0,debug);
 
                 hungryEndTime = System.nanoTime();
                 hungryTime+= Math.round((hungryEndTime-hungryStartTime)/1000000);
-				writeToLog("HUNGRY",Math.round((hungryEndTime-hungryStartTime)/1000000));
+				writeToLog("HUNGRY",Math.round((hungryEndTime-hungryStartTime)/1000000),debug);
 				numberOfHungryTurns++;
 
-                eat(randomGenerator.nextInt(1000));
+				eat(randomGenerator.nextInt(1000));
 
                 leftLock.unlock();
-                writeToLog("PUTTING DOWN THE LEFT CHOPSTICK",0);
+                writeToLog("PUTTING DOWN THE LEFT CHOPSTICK",0,debug);
 
             } finally {
                 rightLock.unlock();
-                writeToLog("PUTTING DOWN THE RIGHT CHOPSTICK",0);
+                writeToLog("PUTTING DOWN THE RIGHT CHOPSTICK",0,debug);
             }
 		}
 	}
 
     private void eat(int eating) {
         this.eatingTime += eating;
-        writeToLog("EATING",eating);
+        writeToLog("EATING",eating,debug);
         sleep(eating);
 		numberOfEatingTurns++;
     }
 
 	private void think(int thinking) {
 		this.thinkingTime+=thinking;
-		writeToLog("THINKING",thinking);
+		writeToLog("THINKING",thinking,debug);
 		sleep(thinking);
 		numberOfThinkingTurns++;
 	}
 
-    private void writeToLog(String action, int time) {
+    private void writeToLog(String action, int time,boolean record) {
         try {
-            synchronized (logFile){ log.write((System.currentTimeMillis()-startTime) + "ms : Philosopher_"+getId()+" is "+action+" for " + time + "\n"); }
+        	if(record) {
+        	synchronized (logFile){ log.write((System.currentTimeMillis()-startTime) + "ms : Philosopher_"+getId()+" is "+action+" for " + time + "\n"); }
+        	}
         } catch (IOException e) {
             e.printStackTrace();
         }

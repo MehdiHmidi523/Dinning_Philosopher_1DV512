@@ -80,7 +80,7 @@ public class DiningPhilosopher {
 
 		//Add the number of philosophers corresponding to this session and assign left and right chopstick to them.
 		for(int i =1; i<=NUMBER_OF_PHILOSOPHERS;i++)
-            philosophers.add(new Philosopher(i-1,chopSticks.get(i% NUMBER_OF_PHILOSOPHERS),chopSticks.get(i-1),SEED));
+            philosophers.add(new Philosopher(i-1,chopSticks.get(i% NUMBER_OF_PHILOSOPHERS),chopSticks.get(i-1),SEED,DEBUG));
 
         // initialize logfile
         try {
