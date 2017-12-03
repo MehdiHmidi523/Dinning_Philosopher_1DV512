@@ -21,7 +21,7 @@ public class DiningPhilosopher {
 	private final int NUMBER_OF_PHILOSOPHERS = 5;
 	private int SIMULATION_TIME = 10000;
 	private int SEED = 0;
-	
+
 	ExecutorService executorService = null;
 	ArrayList<Philosopher> philosophers = null;
 	ArrayList<ChopStick> chopSticks = null;
@@ -36,7 +36,7 @@ public class DiningPhilosopher {
 				executorService.execute(philosophers.get(i));
 				Thread.sleep(50); //makes sure that this thread kicks in before the next one
 			}
-			
+
 			/*
 			 * Now we start the rest of the threads, which are T0, T2, and T4
 			 */
@@ -46,16 +46,16 @@ public class DiningPhilosopher {
 			}
 			
 			// Main thread sleeps till time of simulation
-			Thread.sleep(SIMULATION_TIME);
-			
-			/*	TODO
-			 *  Stop all philosophers.*/
-			for(int i = 0; i < philosophers.size(); i++){
-				//interrupt philosophers.get(i).interrupt  ??
-			}
-			/*
-			 *  Add comprehensive comments to explain your implementation.
-			 */
+			//Thread.sleep(SIMULATION_TIME);
+
+			while ((System.currentTimeMillis()-Philosopher.startTime) <= SIMULATION_TIME) {
+                try {
+                    Thread.sleep(500L);  // Sleep 1/2 second
+                } catch (InterruptedException e) {
+                    // Someone woke us up during sleep, that's OK
+                }
+
+			}executorService.shutdownNow(); // Interrupt all threads
 
 		} finally {
 			executorService.shutdown();
@@ -74,8 +74,6 @@ public class DiningPhilosopher {
 		//create the executor service
 		executorService = Executors.newFixedThreadPool(NUMBER_OF_PHILOSOPHERS);
 
-		Random rand = new Random(System.currentTimeMillis());
-
 		//Add the needed number of Chopsticks to the Table which corresponds to the number of sitting philosophers.
 		for(int i = 1; i<=NUMBER_OF_PHILOSOPHERS;i++) chopSticks.add(new ChopStick(i));
 
@@ -83,10 +81,10 @@ public class DiningPhilosopher {
 		for(int i =1; i<=NUMBER_OF_PHILOSOPHERS;i++)
             philosophers.add(new Philosopher(i,chopSticks.get(i% NUMBER_OF_PHILOSOPHERS),chopSticks.get(i-1),SEED));
 
-
         // initialize logfile
         try {
             PrintWriter writer = new PrintWriter(Philosopher.logFile);
+            writer.print("|");
             writer.close();
             Philosopher.log = new FileWriter(Philosopher.logFile); // initialize logWriter
         } catch (IOException e) { e.printStackTrace(); }

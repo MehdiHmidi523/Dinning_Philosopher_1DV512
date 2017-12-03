@@ -7,7 +7,7 @@ import java.util.concurrent.locks.Lock;
 public class Philosopher implements Runnable {
 	
 	private int id;
-    public static final File logFile = new File("../src/Log.txt");
+    public static final File logFile = new File("Log.txt");
     public static FileWriter log;
     public static long startTime;
 	
@@ -16,7 +16,6 @@ public class Philosopher implements Runnable {
 	
 	private Random randomGenerator = new Random();
     private long seed = 1000;
-    private boolean debug;
 
     private int numberOfEatingTurns = 0;
 	private int numberOfThinkingTurns = 0;
@@ -69,62 +68,44 @@ public class Philosopher implements Runnable {
 	}
 
 	//TODO: impl
-	public double getAverageThinkingTime() {
-		/* TODO
-		 * Return the average thinking time
-		 * Add comprehensive comments to explain your implementation
-		 */
-		return 0;
+	public double getAverageThinkingTime(){
+		if (thinkingTime == 0) return 0;
+		return (thinkingTime/numberOfThinkingTurns);
 	}
-
-	public double getAverageEatingTime() {
-		/* TODO
-		 * Return the average eating time
-		 * Add comprehensive comments to explain your implementation
-		 */
-		return 0;
+	public double getAverageEatingTime(){
+		if (eatingTime == 0) return 0;
+		return (eatingTime/numberOfEatingTurns);
 	}
-
-	public double getAverageHungryTime() {
-		/* TODO
-		 * Return the average hungry time
-		 * Add comprehensive comments to explain your implementation
-		 */
-		return 0;
+	public double getAverageHungryTime(){
+		if (hungryTime == 0) return 0;
+		return (hungryTime/numberOfHungryTurns);
 	}
 
 	@Override
 	public void run() {
-
-		while(!Thread.currentThread().isInterrupted()){ // if session not interrupted and philos	opher did not starve to Nirvana
-
+		while (true) {
 			Lock rightLock = rightChopStick.getLock();
 			Lock leftLock = leftChopStick.getLock();
 
 			rightLock.lock();
 			writeToLog("TAKING THE RIGHT CHOPSTICK",0);
-
 			try {
-				leftLock.lock();
-				writeToLog("TAKING THE LEFT CHOPSTICK",0);
-
-				eat(randomGenerator.nextInt(10)+1);
-
-				leftLock.unlock();
-				writeToLog("PUTTING DOWN THE LEFT CHOPSTICK",0);
-			} finally {
-				rightLock.unlock();
-				writeToLog("PUTTING DOWN THE RIGHT CHOPSTICK",0);
-			}
-			think(randomGenerator.nextInt(10)+1);
-        }
+                leftLock.lock();
+                writeToLog("TAKING THE LEFT CHOPSTICK",0);
+                eat(randomGenerator.nextInt(1000));
+                leftLock.unlock();
+                writeToLog("PUTTING DOWN THE LEFT CHOPSTICK",0);
+            } finally {
+                rightLock.unlock();
+                writeToLog("PUTTING DOWN THE RIGHT CHOPSTICK",0);
+            }
+			think(randomGenerator.nextInt(1000));
+		}
 
 		/* TODO
 		 * Add comprehensive comments to explain your implementation, including deadlock prevention/detection
 		 */
 	}
-
-	public void setSeed(long seed) { this.seed = seed; }
 
     private void eat(int eating) {
         this.eatingTime += eating;
@@ -133,7 +114,7 @@ public class Philosopher implements Runnable {
         sleep(eating);
     }
 
-    private void think(int thinking) {
+      private void think(int thinking) {
 		this.thinkingTime+=thinking;
 		numberOfThinkingTurns++;
 		writeToLog("THINKING",thinking);
@@ -152,6 +133,4 @@ public class Philosopher implements Runnable {
         try { Thread.sleep( duration ); }
         catch ( InterruptedException e ) { Thread.currentThread().interrupt(); }
     }
-
-
 }

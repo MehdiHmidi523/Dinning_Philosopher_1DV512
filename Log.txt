@@ -1,0 +1,299 @@
+3ms : Philosopher_2 is TAKING THE RIGHT CHOPSTICK for 0
+3ms : Philosopher_2 is TAKING THE LEFT CHOPSTICK for 0
+3ms : Philosopher_2 is EATING for 663
+54ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+54ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+54ms : Philosopher_4 is EATING for 417
+105ms : Philosopher_1 is TAKING THE RIGHT CHOPSTICK for 0
+471ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+471ms : Philosopher_5 is TAKING THE RIGHT CHOPSTICK for 0
+471ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+471ms : Philosopher_4 is THINKING for 754
+667ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+667ms : Philosopher_2 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+667ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+667ms : Philosopher_1 is TAKING THE LEFT CHOPSTICK for 0
+667ms : Philosopher_3 is EATING for 289
+667ms : Philosopher_1 is EATING for 540
+667ms : Philosopher_2 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+667ms : Philosopher_2 is THINKING for 674
+956ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+956ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+956ms : Philosopher_3 is THINKING for 962
+1208ms : Philosopher_1 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+1208ms : Philosopher_1 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+1208ms : Philosopher_1 is THINKING for 890
+1208ms : Philosopher_5 is TAKING THE LEFT CHOPSTICK for 0
+1208ms : Philosopher_5 is EATING for 42
+1226ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+1250ms : Philosopher_5 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+1250ms : Philosopher_5 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+1250ms : Philosopher_5 is THINKING for 394
+1250ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+1250ms : Philosopher_4 is EATING for 149
+1341ms : Philosopher_2 is TAKING THE RIGHT CHOPSTICK for 0
+1341ms : Philosopher_2 is TAKING THE LEFT CHOPSTICK for 0
+1341ms : Philosopher_2 is EATING for 885
+1399ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+1399ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+1399ms : Philosopher_4 is THINKING for 99
+1499ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+1499ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+1499ms : Philosopher_4 is EATING for 544
+2043ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+2043ms : Philosopher_5 is TAKING THE RIGHT CHOPSTICK for 0
+2043ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+2043ms : Philosopher_5 is TAKING THE LEFT CHOPSTICK for 0
+2043ms : Philosopher_4 is THINKING for 367
+2044ms : Philosopher_5 is EATING for 320
+2227ms : Philosopher_2 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+2227ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+2227ms : Philosopher_2 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+2227ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+2227ms : Philosopher_2 is THINKING for 609
+2227ms : Philosopher_3 is EATING for 56
+2283ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+2283ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+2283ms : Philosopher_3 is THINKING for 122
+2364ms : Philosopher_5 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+2364ms : Philosopher_1 is TAKING THE RIGHT CHOPSTICK for 0
+2364ms : Philosopher_5 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+2364ms : Philosopher_1 is TAKING THE LEFT CHOPSTICK for 0
+2364ms : Philosopher_5 is THINKING for 965
+2364ms : Philosopher_1 is EATING for 693
+2405ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+2405ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+2405ms : Philosopher_3 is EATING for 904
+3057ms : Philosopher_1 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+3057ms : Philosopher_2 is TAKING THE RIGHT CHOPSTICK for 0
+3057ms : Philosopher_1 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+3057ms : Philosopher_1 is THINKING for 854
+3310ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+3310ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+3310ms : Philosopher_2 is TAKING THE LEFT CHOPSTICK for 0
+3310ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+3310ms : Philosopher_2 is EATING for 165
+3310ms : Philosopher_4 is EATING for 456
+3310ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+3310ms : Philosopher_3 is THINKING for 815
+3476ms : Philosopher_2 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+3476ms : Philosopher_2 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+3476ms : Philosopher_2 is THINKING for 964
+3767ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+3767ms : Philosopher_5 is TAKING THE RIGHT CHOPSTICK for 0
+3767ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+3767ms : Philosopher_5 is TAKING THE LEFT CHOPSTICK for 0
+3767ms : Philosopher_4 is THINKING for 373
+3767ms : Philosopher_5 is EATING for 283
+4051ms : Philosopher_5 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+4051ms : Philosopher_1 is TAKING THE RIGHT CHOPSTICK for 0
+4051ms : Philosopher_5 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+4051ms : Philosopher_1 is TAKING THE LEFT CHOPSTICK for 0
+4051ms : Philosopher_5 is THINKING for 218
+4051ms : Philosopher_1 is EATING for 30
+4081ms : Philosopher_1 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+4081ms : Philosopher_1 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+4081ms : Philosopher_1 is THINKING for 165
+4126ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+4126ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+4126ms : Philosopher_3 is EATING for 93
+4220ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+4220ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+4220ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+4220ms : Philosopher_4 is EATING for 466
+4220ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+4220ms : Philosopher_3 is THINKING for 91
+4246ms : Philosopher_1 is TAKING THE RIGHT CHOPSTICK for 0
+4246ms : Philosopher_1 is TAKING THE LEFT CHOPSTICK for 0
+4246ms : Philosopher_1 is EATING for 979
+4311ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+4686ms : Philosopher_5 is TAKING THE RIGHT CHOPSTICK for 0
+4686ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+4686ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+4686ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+4686ms : Philosopher_3 is EATING for 463
+4686ms : Philosopher_4 is THINKING for 286
+5149ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5149ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+5149ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5150ms : Philosopher_3 is THINKING for 819
+5225ms : Philosopher_1 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5225ms : Philosopher_2 is TAKING THE RIGHT CHOPSTICK for 0
+5225ms : Philosopher_5 is TAKING THE LEFT CHOPSTICK for 0
+5225ms : Philosopher_2 is TAKING THE LEFT CHOPSTICK for 0
+5225ms : Philosopher_5 is EATING for 398
+5225ms : Philosopher_2 is EATING for 502
+5226ms : Philosopher_1 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5226ms : Philosopher_1 is THINKING for 133
+5258ms : Philosopher_5 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5258ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+5258ms : Philosopher_5 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5258ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+5258ms : Philosopher_2 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5258ms : Philosopher_5 is THINKING for 570
+5258ms : Philosopher_4 is EATING for 237
+5258ms : Philosopher_1 is TAKING THE RIGHT CHOPSTICK for 0
+5258ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5258ms : Philosopher_2 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5258ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+5258ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5259ms : Philosopher_2 is THINKING for 246
+5262ms : Philosopher_4 is THINKING for 547
+5262ms : Philosopher_3 is EATING for 131
+5262ms : Philosopher_5 is TAKING THE RIGHT CHOPSTICK for 0
+5262ms : Philosopher_1 is TAKING THE LEFT CHOPSTICK for 0
+5262ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5262ms : Philosopher_1 is EATING for 982
+5262ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+5262ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5262ms : Philosopher_3 is THINKING for 921
+5262ms : Philosopher_1 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5263ms : Philosopher_2 is TAKING THE RIGHT CHOPSTICK for 0
+5263ms : Philosopher_1 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5263ms : Philosopher_5 is TAKING THE LEFT CHOPSTICK for 0
+5263ms : Philosopher_1 is THINKING for 606
+5263ms : Philosopher_5 is EATING for 726
+5263ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+5263ms : Philosopher_5 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5263ms : Philosopher_5 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5263ms : Philosopher_5 is THINKING for 179
+5263ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+5263ms : Philosopher_1 is TAKING THE RIGHT CHOPSTICK for 0
+5263ms : Philosopher_4 is EATING for 334
+5263ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5263ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5263ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+5263ms : Philosopher_4 is THINKING for 755
+5263ms : Philosopher_5 is TAKING THE RIGHT CHOPSTICK for 0
+5263ms : Philosopher_3 is EATING for 60
+5263ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5263ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5263ms : Philosopher_3 is THINKING for 457
+5263ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+5264ms : Philosopher_2 is TAKING THE LEFT CHOPSTICK for 0
+5264ms : Philosopher_2 is EATING for 851
+5264ms : Philosopher_2 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5264ms : Philosopher_2 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5264ms : Philosopher_1 is TAKING THE LEFT CHOPSTICK for 0
+5264ms : Philosopher_2 is THINKING for 926
+5264ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+5264ms : Philosopher_1 is EATING for 114
+5264ms : Philosopher_1 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5264ms : Philosopher_1 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5264ms : Philosopher_2 is TAKING THE RIGHT CHOPSTICK for 0
+5264ms : Philosopher_1 is THINKING for 512
+5264ms : Philosopher_5 is TAKING THE LEFT CHOPSTICK for 0
+5264ms : Philosopher_5 is EATING for 376
+5264ms : Philosopher_5 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5264ms : Philosopher_1 is TAKING THE RIGHT CHOPSTICK for 0
+5264ms : Philosopher_5 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5264ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+5264ms : Philosopher_5 is THINKING for 343
+5264ms : Philosopher_4 is EATING for 218
+5265ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5265ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5265ms : Philosopher_5 is TAKING THE RIGHT CHOPSTICK for 0
+5265ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+5265ms : Philosopher_4 is THINKING for 915
+5265ms : Philosopher_3 is EATING for 885
+5265ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5265ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+5265ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5265ms : Philosopher_3 is THINKING for 669
+5265ms : Philosopher_2 is TAKING THE LEFT CHOPSTICK for 0
+5265ms : Philosopher_2 is EATING for 991
+5265ms : Philosopher_2 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5265ms : Philosopher_2 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5265ms : Philosopher_1 is TAKING THE LEFT CHOPSTICK for 0
+5265ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+5265ms : Philosopher_1 is EATING for 99
+5265ms : Philosopher_2 is THINKING for 125
+5266ms : Philosopher_1 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5266ms : Philosopher_1 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5266ms : Philosopher_2 is TAKING THE RIGHT CHOPSTICK for 0
+5266ms : Philosopher_5 is TAKING THE LEFT CHOPSTICK for 0
+5266ms : Philosopher_5 is EATING for 530
+5266ms : Philosopher_1 is THINKING for 106
+5266ms : Philosopher_5 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5266ms : Philosopher_1 is TAKING THE RIGHT CHOPSTICK for 0
+5266ms : Philosopher_5 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5266ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+5266ms : Philosopher_5 is THINKING for 403
+5266ms : Philosopher_4 is EATING for 413
+5266ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5266ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5266ms : Philosopher_4 is THINKING for 431
+5266ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+5267ms : Philosopher_3 is EATING for 872
+5267ms : Philosopher_5 is TAKING THE RIGHT CHOPSTICK for 0
+5267ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5267ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+5267ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5267ms : Philosopher_2 is TAKING THE LEFT CHOPSTICK for 0
+5267ms : Philosopher_3 is THINKING for 740
+5267ms : Philosopher_2 is EATING for 216
+5267ms : Philosopher_2 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5267ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+5267ms : Philosopher_2 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5267ms : Philosopher_1 is TAKING THE LEFT CHOPSTICK for 0
+5267ms : Philosopher_2 is THINKING for 808
+5267ms : Philosopher_1 is EATING for 818
+5267ms : Philosopher_1 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5267ms : Philosopher_2 is TAKING THE RIGHT CHOPSTICK for 0
+5267ms : Philosopher_5 is TAKING THE LEFT CHOPSTICK for 0
+5267ms : Philosopher_1 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5267ms : Philosopher_5 is EATING for 685
+5267ms : Philosopher_1 is THINKING for 97
+5268ms : Philosopher_5 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5268ms : Philosopher_1 is TAKING THE RIGHT CHOPSTICK for 0
+5268ms : Philosopher_5 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5268ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+5268ms : Philosopher_5 is THINKING for 953
+5268ms : Philosopher_4 is EATING for 194
+5268ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5268ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5268ms : Philosopher_5 is TAKING THE RIGHT CHOPSTICK for 0
+5268ms : Philosopher_4 is THINKING for 946
+5268ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+5268ms : Philosopher_3 is EATING for 418
+5268ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5268ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5268ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+5268ms : Philosopher_3 is THINKING for 898
+5268ms : Philosopher_2 is TAKING THE LEFT CHOPSTICK for 0
+5268ms : Philosopher_2 is EATING for 418
+5269ms : Philosopher_2 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5269ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+5269ms : Philosopher_1 is TAKING THE LEFT CHOPSTICK for 0
+5269ms : Philosopher_1 is EATING for 888
+5270ms : Philosopher_1 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5270ms : Philosopher_1 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5270ms : Philosopher_2 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5270ms : Philosopher_1 is THINKING for 216
+5270ms : Philosopher_2 is THINKING for 279
+5270ms : Philosopher_5 is TAKING THE LEFT CHOPSTICK for 0
+5270ms : Philosopher_2 is TAKING THE RIGHT CHOPSTICK for 0
+5270ms : Philosopher_5 is EATING for 274
+5270ms : Philosopher_5 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5270ms : Philosopher_1 is TAKING THE RIGHT CHOPSTICK for 0
+5270ms : Philosopher_5 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5270ms : Philosopher_5 is THINKING for 170
+5270ms : Philosopher_4 is TAKING THE LEFT CHOPSTICK for 0
+5271ms : Philosopher_4 is EATING for 585
+5271ms : Philosopher_4 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5271ms : Philosopher_4 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5271ms : Philosopher_5 is TAKING THE RIGHT CHOPSTICK for 0
+5271ms : Philosopher_4 is THINKING for 909
+5271ms : Philosopher_3 is TAKING THE LEFT CHOPSTICK for 0
+5271ms : Philosopher_3 is EATING for 420
+5271ms : Philosopher_3 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5271ms : Philosopher_4 is TAKING THE RIGHT CHOPSTICK for 0
+5271ms : Philosopher_3 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5271ms : Philosopher_2 is TAKING THE LEFT CHOPSTICK for 0
+5271ms : Philosopher_3 is THINKING for 632
+5271ms : Philosopher_2 is EATING for 363
+5271ms : Philosopher_2 is PUTTING DOWN THE LEFT CHOPSTICK for 0
+5271ms : Philosopher_3 is TAKING THE RIGHT CHOPSTICK for 0
+5271ms : Philosopher_2 is PUTTING DOWN THE RIGHT CHOPSTICK for 0
+5271ms : Philosopher_1 is TAKING THE LEFT CHOPSTICK for 0
+527
