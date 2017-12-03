@@ -1,5 +1,9 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -70,12 +74,25 @@ public class DiningPhilosopher {
 		//create the executor service
 		executorService = Executors.newFixedThreadPool(NUMBER_OF_PHILOSOPHERS);
 
+		Random rand = new Random(System.currentTimeMillis());
+
 		//Add the needed number of Chopsticks to the Table which corresponds to the number of sitting philosophers.
-		for(int i = 1; i<NUMBER_OF_PHILOSOPHERS;i++) chopSticks.add(new ChopStick(i));
+		for(int i = 0; i<NUMBER_OF_PHILOSOPHERS;i++) chopSticks.add(new ChopStick(i));
 
 		//Add the number of philosophers corresponding to this session and assign left and right chopstick to them.
-		for(int i =1; i<=NUMBER_OF_PHILOSOPHERS;i++) philosophers.add(new Philosopher(i,chopSticks.get(i+1),chopSticks.get(i),SEED));
+		for(int i =0; i<NUMBER_OF_PHILOSOPHERS;i++) {
+            philosophers.add(new Philosopher(i,chopSticks.get(i + 1 % NUMBER_OF_PHILOSOPHERS),chopSticks.get(i),SEED));
+            philosophers.get(i).setSeed(rand.nextLong());
+		}
 
+        // initialize logfile
+        try {
+            PrintWriter writer = new PrintWriter(Philosopher.logFile);
+            writer.close();
+            Philosopher.log = new FileWriter(Philosopher.logFile); // initialize logWriter
+        } catch (IOException e) { e.printStackTrace(); }
+        // initialize time for log file
+        Philosopher.startTime = System.currentTimeMillis();
 
 	}
 

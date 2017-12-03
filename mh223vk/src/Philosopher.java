@@ -2,11 +2,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
+import java.util.concurrent.locks.Lock;
 
 public class Philosopher implements Runnable {
 	
 	private int id;
-    public static final File logFile = new File("src/Log.txt");
+    public static final File logFile = new File("../src/Log.txt");
     public static FileWriter log;
     public static long startTime;
 	
@@ -94,20 +95,28 @@ public class Philosopher implements Runnable {
 	@Override
 	public void run() {
 
-		while(!Thread.currentThread().isInterrupted() && !higherStateOfBeing()){ // if session not interrupted and philosopher did not starve to Nirvana
-            Random pseudo = new Random();
-            think(pseudo.nextInt(1001));
+		while(!Thread.currentThread().isInterrupted()){ // if session not interrupted and philos	opher did not starve to Nirvana
 
-            //first to finish thinking and feel hungry reaches for the Chopsticks and checks
-            if(!possibleToEat()) {
-                try {
-                    Thread.currentThread().wait();  //checks also death.
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }else{
-                eat(pseudo.nextInt(1001)); // philosopher takes the chopsticks (lock them ?)
-            }
+			Lock rightLock = rightChopStick.getLock();
+			Lock leftLock = leftChopStick.getLock();
+
+			rightLock.lock();
+			writeToLog("TAKING THE RIGHT CHOPSTICK",0);
+
+			try {
+				leftLock.lock();
+				writeToLog("TAKING THE LEFT CHOPSTICK",0);
+
+				eat(randomGenerator.nextInt(10)+1);
+
+				leftLock.unlock();
+				writeToLog("PUTTING DOWN THE LEFT CHOPSTICK",0);
+			} finally {
+				rightLock.unlock();
+				writeToLog("PUTTING DOWN THE RIGHT CHOPSTICK",0);
+			}
+			think(randomGenerator.nextInt(10)+1);
+
 
         }
 
@@ -116,23 +125,21 @@ public class Philosopher implements Runnable {
 		 */
 	}
 
-    public void setSeed(long seed) { this.seed = seed; }
+	public void setSeed(long seed) { this.seed = seed; }
 
     private void eat(int eating) {
         this.eatingTime += eating;
+		numberOfEatingTurns++;
         writeToLog("EATING",eating);
         sleep(eating);
     }
 
-    private boolean possibleToEat() {
-	    return (leftChopStick.TAKEN) && (rightChopStick.TAKEN);
-    }
 
     private void think(int thinking) {
-        this.thinkingTime+=thinking;
-        writeToLog("THINKING",thinking);
+		this.thinkingTime+=thinking;
+		numberOfThinkingTurns++;
+		writeToLog("THINKING",thinking);
         sleep(thinking);
-
     }
 
     private void writeToLog(String action, int time) {
@@ -142,10 +149,6 @@ public class Philosopher implements Runnable {
             e.printStackTrace();
         }
 	}
-
-    private boolean higherStateOfBeing() { // philosopher dies after three consecutive rounds of waiting
-	    return hungryTime>=3000;
-    }
 
     private void sleep(int duration) {
         try { Thread.sleep( duration ); }
